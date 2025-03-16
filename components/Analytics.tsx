@@ -11,7 +11,7 @@ function AnalyticsContent() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (analytics) {
+    if (typeof window !== 'undefined' && analytics) {
       // Track page view with enhanced parameters
       logEvent(analytics, 'page_view', {
         page_path: pathname,
